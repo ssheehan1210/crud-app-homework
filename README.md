@@ -3,10 +3,10 @@
 1. Create a crud app for pets, which has a schema that contains at least four properties
 
 2. Create a github repo for the application
-- make commits after you get something working
-- start small, start with getting your server running
-- then get the views and routes working
-- then intergrate the db
+	- make commits after you get something working
+	- start small, start with getting your server running
+	- then get the views and routes working
+	- then intergrate the db
 
 3. Use your fruits app as a reference
 
