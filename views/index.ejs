@@ -15,11 +15,11 @@
 		<li><%= item.name %></li>
 		<li><%= item.age %></li>
 		<li><%= item.color %></li>
-		<% if (pet.goodToOwn === true) { %>
-			<li>Good To Own</li>
-		<% } else { %>
-			<li>Not Good To Own</li>
-		<% } %>
+		<li><% if (item.goodToOwn === true) { %>
+			<span>Good To Own</span>
+		<% } else if (item.goodToOwn === false) { %>
+			<span>Not Good To Own</span>
+		<% } %></li>
 		<a href="/pets/<%= item.id %>" title="">Show Pet Page</a>
 		<form action="/pets/<%= item.id %>?_method=DELETE" method="POST">
 			<button type="submit">Delete Pet</button>

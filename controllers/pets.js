@@ -33,7 +33,7 @@ router.get('/:index/edit', (req, res) => {
 		if(err){
 			res.send('there was an error with the database on the edit page');
 		} else {
-			res.render('edit', { pet: pets });
+			res.render('edit', { pet: pet });
 		}
 	})
 })
@@ -41,7 +41,7 @@ router.get('/:index/edit', (req, res) => {
 router.post('/create', (req, res) => {
 	console.log('activating post route');
 	console.log(req.body);
-	if(req.body.goodToOwn === 'on'){
+	if (req.body.goodToOwn === 'on') {
 		req.body.goodToOwn = true;
 	} else {
 		req.body.goodToOwn = false;
@@ -59,12 +59,12 @@ router.post('/create', (req, res) => {
 router.put('/:index/edit', (req, res) => {
 	console.log('activating edit route');
 	console.log(req.body);
-	if(req.body.goodToOwn === 'on'){
+	if (req.body.goodToOwn === 'on') {
 		req.body.goodToOwn = true;
 	} else {
 		req.body.goodToOwn = false;
 	}
-	pet.findByIdAndUpdate(req.params.index, (err, pet) => {
+	pet.findByIdAndUpdate(req.params.index, req.body, (err, pet) => {
 		if(err){
 			res.send('there was an error when editing the pet');
 		} else {
