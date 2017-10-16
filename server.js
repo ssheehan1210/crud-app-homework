@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 require('./db/db');
 
-const petsController = require('./controllers/pets.js');
+const petsController = require('./controllers/pets');
 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
