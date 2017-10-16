@@ -9,7 +9,25 @@
 <body>
 	<h1>Crud-App Homework: Pets</h1>
 
+	<h4>Pets:</h4>
+	<ul>
+		<% pet.forEach((item, i) => { %>
+		<li><%= item.name %></li>
+		<li><%= item.age %></li>
+		<li><%= item.color %></li>
+		<% if (pet.goodToOwn === true) { %>
+			<li>Good To Own</li>
+		<% } else { %>
+			<li>Not Good To Own</li>
+		<% } %>
+		<a href="/pets/<%= item.id %>" title="">Show Pet Page</a>
+		<form action="/pets/<%= item.id %>?_method=DELETE" method="POST">
+			<button type="submit">Delete Pet</button>
+		</form>
+		<% }) %>
+	</ul>
 
+	<a href="/pets/new" title="">Click for New Pet</a>
 
 	<script src="/javascripts/app.js"></script>
 </body>

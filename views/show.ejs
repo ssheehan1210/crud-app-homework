@@ -9,7 +9,17 @@
 <body>
 	<h1>Show Pet Page</h1>
 
+	This pet's name is <%= pet.name %>. He/She is <%= pet.color %> and is <%= pet.age %> years old.
 
+	<% if (pet.goodToOwn === true) { %>
+		<span>This pet is ready for adoption!</span>
+	<% } else { %>
+		<span>This pet is not ready to adopt right now. Check in later.</span>
+	<% } %>
+
+	<a href="/pets/<%= pet.id %>/edit" title=""><%= "Edit " + pet.name %></a>
+
+	<a href="/pokemon">Back to Main Page</a>
 
 </body>
 </html>
